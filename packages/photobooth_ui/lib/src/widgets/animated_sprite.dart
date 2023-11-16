@@ -137,7 +137,8 @@ class _AnimatedSpriteState extends State<AnimatedSprite> {
           : const SizedBox(),
       secondChild: SizedBox.expand(
         child: _status.isLoaded
-            ? SpriteAnimationWidget(animation: _animation, playing: _isPlaying)
+        ? SpriteAnimationWidget(animation: _animation, animationTicker: SpriteAnimationTicker(_animation), playing: _isPlaying, anchor: Anchor.center)
+            // ? SpriteAnimationWidget(animation: _animation, playing: _isPlaying, anchor: Anchor.center)
             : const SizedBox(),
       ),
       crossFadeState: _status.isLoaded
